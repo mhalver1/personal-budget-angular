@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <!-- This is an SEO Change -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Budget</title>
     <link rel="stylesheet" href="reset.css">
@@ -10,35 +12,39 @@
 <body>
 
     <nav class="menu">
-        <!-- This is a Semantic HTML Change -->
+        <!-- This is a Semantic HTML Change:changed div to nav -->
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="https://google.com">Google</a></li>
+            <a class="skip-to-content-link" href="#main">
+                <h2>Skip to content</h2>
+              </a>
+              <!-- This is an A11y Change: added skip to content link -->
         </ul>
     </nav>
 
 
     
     <header class="hero" aria-label="header of page">
-        
-        <!-- This is an A11y Change -->
-        <!-- This is a Semantic HTML Change -->
+        <!-- This is an A11y Change: added aria-label to describe purpose of class -->
+        <!-- This is a Semantic HTML Change: changed div to header-->
         <h1>Personal Budget</h1>
         <h2>A personal-budget management app</h2>
+        
     </header>
 
     <head>  <meta name="description" 
         content="This is a personal-budget application that gives budget advice."></head>
-    <!-- This is an SEO Change -->
+    <!-- This is an SEO Change: added meta tag to describe purpose of webpage-->
         <div class="container center">
 
         <div class="page-area">
 
             <div class="text-box">
                 <h2>Stay on track</h2>
-                <!-- This is an SEO Change -->
+                <!-- This is an A11y Change: changed h1 elements to h2 so only 1 h1 element exists-->
                 <p>
                     Do you know where you are spending your money? If you really stop to track it down,
                     you would get surprised! Proper budget management depends on real data... and this
@@ -106,13 +112,13 @@
     </div>
 
     <footer class="bottom" aria-label="footer of page">
-        <!-- This is a Semantic HTML Change -->
-        <!-- This is an A11y Change -->
-        <div class="center">
+        <!-- This is a Semantic HTML Change: changed div to footer -->
+        <!-- This is an A11y Change: added aria-label to describe purpose of class -->
+        <div class="center" aria-label="footer of page">
             All rights reserved &copy; Fabio Nolasco
             <a href="https://validator.w3.org/">html-validator</a>
             <a href="https://jigsaw.w3.org/css-validator/">css-validator</a>
-        <!-- This is an SEO Change -->
+        <!-- This is an SEO Change: added html and css validator to enhance performance -->
         </div>
     </footer>
 
