@@ -39,9 +39,6 @@ export class HomepageComponent implements OnInit {
     public colors;
 
 
-
-
-
     public createSvg(): void {
       this.svg = d3.select("figure#pie")
       .append("svg")
@@ -102,53 +99,40 @@ export class HomepageComponent implements OnInit {
   constructor(private http: HttpClient, public dataService: DataService) {
     const el = document.getElementById('myChart');
     console.log('Is myChart there?', el);
+    /*if(this.dataSource.labels.length === 0)
+  {
     this.dataService.returnData();
+  }*/
    }
-
-
 
 
   ngOnInit(): void {
     this.http.get('http://localhost:3000/budget')
     .subscribe((res: any) => {
-      //debugger;
-      //console.log(res);
-      for(let i = 0; i < res.myBudget.length; i++) {
+
+      /*for(let i = 0; i < res.myBudget.length; i++) {
         this.dataSource.datasets[0].data[i] = res.myBudget[i].budget;
         this.dataSource.labels[i] = res.myBudget[i].title;
 
     }
-    //this.createChart();
-      this.createChart2();
       let data = this.dataSource.datasets[0].data;
       let labels = this.dataSource.labels;
-      //console.log(data);
-      //console.log(labels);
+
       function randomData (){
       return labels.map( function(label, i){
       return { label: label, value: data[i] }
   });
-}
-console.log(this.dataService.returnData());
-    this.createSvg();
-    this.createColors(randomData());
-    this.drawChart(randomData());
+}*/
+      this.createChart();
+      this.createSvg();
+      this.createColors(this.dataService.secondData);
+      this.drawChart(this.dataService.secondData);
     });
 
   }
 
 
-
-  createChart() {
-    let ctx = document.getElementById("myChart");
-    let myPieChart = new Chart(ctx, {
-        type: 'pie',
-        data: this.dataSource
-        //this.dataService.returnData()
-    });
-}
-
-createChart2() {
+createChart() {
   let ctx = document.getElementById("myChart");
   let myPieChart = new Chart(ctx, {
       type: 'pie',

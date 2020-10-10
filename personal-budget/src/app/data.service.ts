@@ -23,8 +23,13 @@ export class DataService {
     ],
     labels: []
 };
-
-  constructor(private http: HttpClient) {}
+public secondData;
+constructor(private http: HttpClient) {
+  if(this.dataSource.labels.length === 0)
+  {
+    this.returnData();
+  }
+}
 
 
   returnData(){
@@ -45,9 +50,8 @@ export class DataService {
         return { label: label, value: data[i] }
     });
   }
-
+  this.secondData = randomData();
     });
     }
-
    }
 
